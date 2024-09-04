@@ -24,7 +24,7 @@ public class TodoController {
 	Mono<ResponseEntity<Todo>> findTodoById(@PathVariable int id) {
 
 		return todoService.findTodoById(id)
-				.map(todo -> ResponseEntity.ok(todo));
+				.map(ResponseEntity::ok);
 	}
 
 	@GetMapping("/")
@@ -49,7 +49,7 @@ public class TodoController {
 	@GetMapping("/search")
 	Mono<ResponseEntity<Todo>> searchTodoByTitle(@RequestParam String title) {
 		return todoService.searchTodoByTitle(title)
-				.map(todo -> ResponseEntity.ok(todo))
+				.map(ResponseEntity::ok)
 				.defaultIfEmpty(ResponseEntity.notFound().build());
 	}
 }
