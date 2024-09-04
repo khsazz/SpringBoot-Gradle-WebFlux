@@ -2,7 +2,6 @@ package com.example.bootandgradle.controller;
 
 import com.example.bootandgradle.entity.Todo;
 import com.example.bootandgradle.service.TodoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +14,6 @@ public class TodoController {
 
 	private final TodoService todoService;
 
-	@Autowired
 	public TodoController(TodoService todoService) {
 		this.todoService = todoService;
 	}
